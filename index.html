@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Advanced Expense Tracker</title>
+        <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+          <h1>💰 Advanced Expense Tracker</h1>
+            <div class="container">
+                <!-- Balance Summary -->
+                    <div class="summary-box">
+                          <div class="card">
+                                  <h3>Initial Balance</h3>
+                                          <p>$<span id="initial">0.00</span></p>
+                                                </div>
+                                                      <div class="card">
+                                                              <h3>Total Income</h3>
+                                                                      <p>$<span id="income">0.00</span></p>
+                                                                            </div>
+                                                                                  <div class="card">
+                                                                                          <h3>Total Expenses</h3>
+                                                                                                  <p>$<span id="expenses">0.00</span></p>
+                                                                                                        </div>
+                                                                                                            </div>
+                                                                                                                <div class="card final-balance">
+                                                                                                                      <h3>Final Balance</h3>
+                                                                                                                            <p>$<span id="final">0.00</span></p>
+                                                                                                                                </div>
+
+                                                                                                                                    <!-- Initial Balance Input -->
+                                                                                                                                        <div class="set-balance">
+                                                                                                                                              <input type="number" id="initial-balance" placeholder="Enter Initial Balance">
+                                                                                                                                                    <button onclick="setInitialBalance()">Set Balance</button>
+                                                                                                                                                        </div>
+
+                                                                                                                                                            <!-- Transaction Form -->
+                                                                                                                                                                <form id="transaction-form">
+                                                                                                                                                                      <select id="type" required>
+                                                                                                                                                                              <option value="income">Income</option>
+                                                                                                                                                                                      <option value="expense">Expense</option>
+                                                                                                                                                                                            </select>
+                                                                                                                                                                                                  <input type="text" id="name" placeholder="Description" required>
+                                                                                                                                                                                                        <input type="number" id="amount" placeholder="Amount" required>
+                                                                                                                                                                                                              <input type="date" id="date" required>
+                                                                                                                                                                                                                    <select id="category" required>
+                                                                                                                                                                                                                            <option value="General">General</option>
+                                                                                                                                                                                                                                    <option value="Food">Food</option>
+                                                                                                                                                                                                                                            <option value="Transport">Transport</option>
+                                                                                                                                                                                                                                                    <option value="Bills">Bills</option>
+                                                                                                                                                                                                                                                            <option value="Shopping">Shopping</option>
+                                                                                                                                                                                                                                                                  </select>
+                                                                                                                                                                                                                                                                        <button type="submit">Add Transaction</button>
+                                                                                                                                                                                                                                                                            </form>
+
+                                                                                                                                                                                                                                                                                <!-- Buttons -->
+                                                                                                                                                                                                                                                                                    <div class="actions">
+                                                                                                                                                                                                                                                                                          <button onclick="downloadWeeklyStatement()">📊 Download Weekly Statement</button>
+                                                                                                                                                                                                                                                                                              </div>
+
+                                                                                                                                                                                                                                                                                                  <!-- Transactions List -->
+                                                                                                                                                                                                                                                                                                      <h3>Transactions</h3>
+                                                                                                                                                                                                                                                                                                          <ul id="transaction-list"></ul>
+                                                                                                                                                                                                                                                                                                            </div>
+
+                                                                                                                                                                                                                                                                                                              <!-- SheetJS for Excel export -->
+                                                                                                                                                                                                                                                                                                                <script src="xlsx.full.min.js"></script>
+                                                                                                                                                                                                                                                                                                                  <script src="script.js"></script>
+                                                                                                                                                                                                                                                                                                                  </body>
+                                                                                                                                                                                                                                                                                                                  </html>
